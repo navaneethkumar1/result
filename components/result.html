@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result management</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet"/>
+    <link href="../css/result.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <div class="logo">
+            <li><a>Result Management</a></li></div>
+            <div class="navbar">
+          <li><a class="active" href="./home.html">Home</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="./result.html">Result</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+            </div>
+        </ul>
+        </div>
+        <div class="result-button">
+            <div class="res-btn1">
+                <button onclick="showScheme('scheme1', this)">2018 SCHEME</button><br/>
+            </div>
+            <div class="res-btn2">
+                <button onclick="showScheme('scheme2', this)">2021 SCHEME</button><br/>
+            </div>
+            <div class="res-btn3">
+                <button onclick="showScheme('scheme3', this)">2022 SCHEME</button><br/>
+            </div>
+        </div>
+        
+        <div class="scheme1" id="scheme1" style="display: none;">
+            <h3>ENTER YOUR USN&SEM</h3>
+            <label>USN:</label>
+            <input type="text" id="usn1" placeholder="Enter here"required>
+            <label>Choose the semester:</label>
+            <select class="semester" id="sem">
+              <option id="sem1">sem 1</option>
+              <option id="sem2">Sem 2</option>
+              <option id="sem3">sem 3</option>
+              <option id="sem4">sem 4</option>
+              <option id="sem5">sem 5</option>
+              <option id="sem6">sem 6</option>
+              <option id="sem7">sem 7</option>
+              <option id="sem8">sem 8</option>
+            </select>
+            <button onclick="Checkusn1()">Result</button>
+        </div>
+        <div class="scheme2" id="scheme2" style="display: none;">
+            <h3>ENTER YOUR USN&SEM</h3>
+            <label>USN:</label>
+            <input type="text" id="usn2" placeholder="Enter here"required>
+            <label>Choose the semester</label>
+            <select class="semester" id="sem">
+              <option id="sem1">sem 1</option>
+              <option id="sem2">Sem 2</option>
+              <option id="sem3">sem 3</option>
+              <option id="sem4">sem 4</option>
+              <option id="sem5">sem 5</option>
+              <option id="sem6">sem 6</option>
+              <option id="sem7">sem 7</option>
+              <option id="sem8">sem 8</option>
+            </select>
+            <button onclick="Checkusn2()">Result</button>
+        </div>
+        <div class="scheme3" id="scheme3" style="display: none;">
+            <h3>ENTER YOUR USN&SEM</h3>
+            <label>USN:</label>
+            <input type="text" id="usn3" placeholder="Enter here"required>
+            <label>Choose the semester</label>
+            <select class="semester" id="sem">
+              <option id="sem1">sem 1</option>
+              <option id="sem2">Sem 2</option>
+              <option id="sem3">sem 3</option>
+              <option id="sem4">sem 4</option>
+              <option id="sem5">sem 5</option>
+              <option id="sem6">sem 6</option>
+              <option id="sem7">sem 7</option>
+              <option id="sem8">sem 8</option>
+            </select>
+            <button onclick="Checkusn3()">Result</button>
+        </div>
+        
+        <script>
+            function showScheme(schemeId, button) {
+                const selectedScheme = document.getElementById(schemeId);
+                const schemes = document.querySelectorAll('[id^="scheme"]');
+                const buttons = document.querySelectorAll('.result-button button');
+        
+                if (selectedScheme.style.display === 'none') {
+                    schemes.forEach(scheme => {
+                        scheme.style.display = 'none';
+                    });
+                    selectedScheme.style.display = 'block';
+        
+                    buttons.forEach(btn => {
+                        if (btn !== button) {
+                            btn.style.display = 'none';
+                        } else {
+                            btn.style.display = 'block';
+                        }
+                    });
+                } else {
+                    schemes.forEach(scheme => {
+                        scheme.style.display = 'none';
+                    });
+                    buttons.forEach(btn => {
+                        btn.style.display = 'block';
+                    });
+                }
+            }
+        </script>
+    <script>
+    function Checkusn1() {
+        var usn = document.getElementById("usn1").value;
+        var alphaexp = /^[1-4][A-Za-z][A-Za-z][0-9][0-9][A-Za-z][A-Za-z][0-9][0-9][0-9]$/;
+        
+        if (usn.length === 0) {
+            alert("Please enter the USN");
+            return false;
+        } else if (!usn.match(alphaexp)) {
+            alert("Enter the USN in correct format");
+            return false;
+        } else {
+            alert("USN is correct");
+            return true;
+        }
+    }
+    function Checkusn2() {
+        var usn = document.getElementById("usn2").value;
+        var alphaexp = /^[1-4][A-Za-z][A-Za-z][0-9][0-9][A-Za-z][A-Za-z][0-9][0-9][0-9]$/;
+        
+        if (usn.length === 0) {
+            alert("Please enter the USN");
+            return false;
+        } else if (!usn.match(alphaexp)) {
+            alert("Enter the USN in correct format");
+            return false;
+        } else {
+            alert("USN is correct");
+            return true;
+        }
+    }
+    function Checkusn3() {
+        var usn = document.getElementById("usn3").value;
+        var alphaexp = /^[1-4][A-Za-z][A-Za-z][0-9][0-9][A-Za-z][A-Za-z][0-9][0-9][0-9]$/;
+        
+        if (usn.length === 0) {
+            alert("Please enter the USN");
+            return false;
+        } else if (!usn.match(alphaexp)) {
+            alert("Enter the USN in correct format");
+            return false;
+        } else {
+            alert("USN is correct");
+            return true;
+        }
+    }
+</script>
+</body>
+</html>
